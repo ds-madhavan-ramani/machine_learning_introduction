@@ -8,13 +8,12 @@ import os
 from cycler import cycler
 from pprint import pprint
 
-#set_matplotlib_formats('png', 'svg')
 set_matplotlib_formats('pdf', 'png')
 plt.rcParams['savefig.dpi'] = 300
 plt.rcParams['image.cmap'] = "viridis"
 plt.rcParams['image.interpolation'] = "none"
 plt.rcParams['savefig.bbox'] = "tight"
-plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['lines.linewidth'] = 1
 plt.rcParams['legend.numpoints'] = 1
 plt.rc('axes', prop_cycle=(cycler('color', mglearn.plot_helpers.cm_cycle.colors) +
                            cycler('linestyle', ['-', '--', ':',
@@ -32,3 +31,17 @@ np, mglearn
 # Prints outputs in cells so that we don't have to write print() every time 
 InteractiveShell.ast_node_interactivity = "all"
 
+# Matplotlib tweaks for presentations
+plt.rcParams["figure.figsize"] = (6, 6)
+plt.rcParams["figure.max_open_warning"] = -1
+
+# Presentations
+from notebook.services.config import ConfigManager
+cm = ConfigManager()
+cm.update('livereveal', {'width': '95%', 'height': 786, 'scroll': True, 'theme': 'solarized', 'transition': 'fade', 'overflow': 'visible', 'scroll': True,})
+
+# Silence warnings
+import warnings
+warnings.simplefilter(action="ignore", category=FutureWarning)
+warnings.simplefilter(action="ignore", category=UserWarning)
+warnings.simplefilter(action="ignore", category=RuntimeWarning)
