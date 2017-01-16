@@ -28,6 +28,8 @@ from .plot_metrics import (plot_confusion_matrix_illustration,
                            plot_decision_threshold)
 from .plot_dbscan import plot_dbscan
 from .plot_ridge import plot_ridge_n_samples
+from .plot_overfitting import plot_overfitting
+
 
 __all__ = ['plot_linear_svc_regularization',
            "plot_animal_tree", "plot_tree_progressive",
@@ -65,5 +67,6 @@ __all__ = ['plot_linear_svc_regularization',
            'plot_binary_confusion_matrix',
            'plot_decision_threshold',
            'plot_dbscan',
-           'plot_ridge_n_samples'
+           'plot_ridge_n_samples',
+           'plot_overfitting'
            ]
